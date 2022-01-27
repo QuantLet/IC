@@ -1,8 +1,12 @@
-for (j in c(1,1000,10000)){
+for (j in c(1, 1000, 10000)){
   set.seed(j)
-  epsilon = rnorm(1000,0,4)
-  mu      = 0.5
-  y       = mu + epsilon[-1] + 0.5 * epsilon[-length(epsilon)]
+  c       = 0.5
+  a       = 0.5
+  mu      = 0
+  sigma   = 4
+  N       = 1000
+  epsilon = rnorm(N, mu, sigma)
+  y       = c + epsilon[-1] + a * epsilon[-length(epsilon)]
   LogLik  = c()
   aic     = c()
   bic     = c()
